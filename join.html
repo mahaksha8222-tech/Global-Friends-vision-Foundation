@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us | Global Friends Vision Foundation</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================================
+           JOIN US PAGE - FORM & CONTRIBUTION GRID STYLES
+           ========================================================= */
+
+        /* 3-कॉलम कॉन्ट्रिब्यूशन कार्ड ग्रिड */
+        .contribute-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 45px;
+        }
+
+        .contribute-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-top: 4px solid var(--gold-accent);
+            border-radius: 14px;
+            padding: 34px 26px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contribute-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px rgba(11, 31, 56, 0.12);
+        }
+
+        .contribute-num {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--gold-accent);
+            margin-bottom: 10px;
+        }
+
+        .contribute-card h3 {
+            color: var(--navy-primary);
+            font-size: 21px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }
+
+        .contribute-card p {
+            font-size: 15.5px;
+            line-height: 1.75;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* सेंटर्ड एप्लीकेशन फॉर्म कंटेनर */
+        .join-form-wrapper {
+            max-width: 820px;
+            margin: 45px auto 0;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-top: 5px solid var(--navy-primary);
+            border-radius: 16px;
+            padding: 45px 42px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .join-form-wrapper h3 {
+            color: var(--navy-primary);
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .join-form-subtext {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 15.5px;
+            margin-bottom: 30px;
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--navy-primary);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1.5px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 15px;
+            color: var(--text-main);
+            background: #fdfdfd;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--navy-primary);
+            box-shadow: 0 0 0 3px rgba(11, 31, 56, 0.1);
+            background: #ffffff;
+        }
+
+        select.form-control {
+            cursor: pointer;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .join-submit-btn {
+            background: var(--navy-primary);
+            color: #ffffff;
+            border: none;
+            padding: 15px 36px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(11, 31, 56, 0.2);
+            margin-top: 10px;
+        }
+
+        .join-submit-btn:hover {
+            background: var(--gold-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(196, 139, 40, 0.35);
+        }
+
+        @media (max-width: 992px) {
+            .contribute-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .form-row-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .contribute-grid {
+                grid-template-columns: 1fr;
+            }
+            .join-form-wrapper {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar">
+        <div class="top-container">
+            <span>📍 Ambala, Haryana, India</span>
+            <span>✉ info@globalfriendsvision.org</span>
+        </div>
+    </div>
+
+    <!-- ================= BRAND HEADER ================= -->
+    <header class="brand-header">
+        <div class="brand-container">
+            <div class="logo-box">
+                <img src="images/logo1.jpg" alt="Global Friends Vision Foundation Logo">
+            </div>
+            <div class="brand-content">
+                <p class="tagline">सेवा • मानवता • शिक्षा • स्वास्थ्य • संस्कृति</p>
+                <h1>Global Friends Vision Foundation</h1>
+                <p class="location">Ambala, Haryana, India</p>
+                <p class="brand-description">
+                    Working towards a sensitive, educated, healthy, self-reliant and cultured society.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="education.html">Education</a>
+            <a href="health.html">Health</a>
+            <a href="culture.html">Culture & Art</a>
+            <a href="media.html">Media</a>
+            <a href="team.html">Our Team</a>
+            <a href="contact.html">Contact</a>
+            <a href="join.html" class="active">Join Us</a>
+        </div>
+    </nav>
+
+    <!-- ================= HERO BANNER ================= -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <span class="hero-small">GLOBAL FRIENDS VISION FOUNDATION</span>
+            <h2>Join Us</h2>
+            <p>
+                Become a part of our journey towards service, humanity, education and positive social change.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= 1. INTRO STATEMENT ================= -->
+    <section class="edu-intro-section">
+        <div class="edu-container">
+            <div class="section-heading">
+                <span class="section-label">BE A PART OF THE CHANGE</span>
+                <h2>Together, We Can Make a Difference</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="edu-intro-card">
+                <p>
+                    <strong>Global Friends Vision Foundation</strong> welcomes individuals who believe in humanity, social responsibility and meaningful community development.
+                </p>
+                <p>
+                    By joining us, you can contribute your time, knowledge, skills and ideas towards initiatives related to education, health, women empowerment, culture, art and social awareness.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 2. 6-CARD CONTRIBUTION AREAS ================= -->
+    <section class="why-edu-section">
+        <div class="edu-container">
+            <div class="section-heading">
+                <span class="section-label">YOUR CONTRIBUTION MATTERS</span>
+                <h2>How You Can Contribute</h2>
+                <div class="heading-line"></div>
+                <p class="heading-description">
+                    Every person has something valuable to contribute. Choose the area where your interest and skills can support our vision.
+                </p>
+            </div>
+
+            <div class="contribute-grid">
+                <!-- 01 -->
+                <div class="contribute-card">
+                    <span class="contribute-num">01</span>
+                    <h3>Volunteer</h3>
+                    <p>Participate in social welfare initiatives, awareness activities and community programmes according to your availability and interests.</p>
+                </div>
+
+                <!-- 02 -->
+                <div class="contribute-card">
+                    <span class="contribute-num">02</span>
+                    <h3>Support Education</h3>
+                    <p>Help support educational opportunities, study material and guidance for students from economically weaker backgrounds.</p>
+                </div>
+
+                <!-- 03 -->
+                <div class="contribute-card">
+                    <span class="contribute-num">03</span>
+                    <h3>Support Health Awareness</h3>
+                    <p>Contribute towards health awareness, cleanliness, nutrition and healthy lifestyle initiatives in the community.</p>
+                </div>
+
+                <!-- 04 -->
+                <div class="contribute-card">
+                    <span class="contribute-num">04</span>
+                    <h3>Promote Culture & Art</h3>
+                    <p>Support Indian cultural heritage, folk traditions, music, art, literature and talented artists.</p>
+                </div>
+
+                <!-- 05 -->
+                <div class="contribute-card">
+                    <span class="contribute-num">05</span>
+                    <h3>Support Women Empowerment</h3>
+                    <p>Encourage education, awareness, safety, self-reliance and rights awareness for women and girls.</p>
+                </div>
+
+                <!-- 06 -->
+                <div class="contribute-card">
+                    <span class="contribute-num">06</span>
+                    <h3>Share Your Skills</h3>
+                    <p>Share your professional knowledge, creative skills, experience or ideas to support meaningful foundation initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 3. JOIN FORM ================= -->
+    <section class="edu-intro-section">
+        <div class="edu-container">
+            <div class="section-heading">
+                <span class="section-label">GET INVOLVED</span>
+                <h2>Become a Part of Our Journey</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="join-form-wrapper">
+                <h3>Join Us Application</h3>
+                <p class="join-form-subtext">
+                    Fill in your details below and our team will connect with you regarding suitable opportunities.
+                </p>
+
+                <form action="#" method="POST">
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">Area of Interest</label>
+                            <select id="interest" class="form-control" required>
+                                <option value="" disabled selected>Select an area</option>
+                                <option value="Education">Education</option>
+                                <option value="Health">Health</option>
+                                <option value="Women Empowerment">Women Empowerment</option>
+                                <option value="Culture & Art">Culture & Art</option>
+                                <option value="Social Service">Social Service</option>
+                                <option value="Volunteering">Volunteering</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Why Would You Like to Join?</label>
+                        <textarea id="message" class="form-control" placeholder="Tell us briefly about your interest, experience or how you would like to contribute..."></textarea>
+                    </div>
+
+                    <button type="submit" class="join-submit-btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 4. IMPACT STATEMENT ================= -->
+    <section class="social-change-section">
+        <div class="edu-container">
+            <div class="social-change-card">
+                <span class="section-label">UNITED FOR CHANGE</span>
+                <h2>Your Time, Skills and Ideas Can Create Impact</h2>
+                <div class="heading-line"></div>
+                <p>
+                    Social change becomes stronger when individuals come together with compassion, responsibility and a shared vision. Join hands with Global Friends Vision Foundation and contribute towards building a better society.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Global Friends Vision Foundation</h3>
+                <p>
+                    सेवा, मानवता, शिक्षा, स्वास्थ्य, महिला सम्मान, संस्कृति और कला के माध्यम से समाज में सकारात्मक परिवर्तन के लिए समर्पित।
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="education.html">Education</a>
+                <a href="health.html">Health</a>
+                <a href="culture.html">Culture & Art</a>
+                <a href="media.html">Media</a>
+                <a href="team.html">Our Team</a>
+                <a href="contact.html">Contact</a>
+                <a href="join.html">Join Us</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>📍 Ambala, Haryana, India</p>
+                <p>✉ info@globalfriendsvision.org</p>
+                <p>🤝 Join us for social change</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Global Friends Vision Foundation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
