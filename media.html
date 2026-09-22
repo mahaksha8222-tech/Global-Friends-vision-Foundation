@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media & News | Global Friends Vision Foundation</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================================
+           MEDIA PAGE - LARGE & READABLE NEWSPAPER SHOWCASE
+           ========================================================= */
+
+        /* 1-कॉलम बड़ा लेआउट ताकि अखबार के बारीक अक्षर साफ़ पढ़े जा सकें */
+        .media-news-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin-top: 45px;
+        }
+
+        .media-newspaper-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(11, 31, 56, 0.08);
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: stretch;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .media-newspaper-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(11, 31, 56, 0.12);
+        }
+
+        /* अखबार की इमेज का बड़ा फ्रेम */
+        .newspaper-frame {
+            background: #fdfdfd;
+            border-right: 1px solid var(--border-light);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 520px;
+            cursor: pointer;
+        }
+
+        .newspaper-frame img {
+            width: 100%;
+            height: auto;
+            max-height: 560px;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s ease;
+        }
+
+        .newspaper-frame:hover img {
+            transform: scale(1.02);
+        }
+
+        /* विवरण बॉक्स */
+        .newspaper-details {
+            padding: 45px 38px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #ffffff;
+        }
+
+        .media-badge {
+            display: inline-block;
+            background: rgba(196, 139, 40, 0.14);
+            color: var(--gold-accent);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            align-self: flex-start;
+            text-transform: uppercase;
+        }
+
+        .newspaper-details h3 {
+            color: var(--navy-primary);
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.35;
+        }
+
+        .newspaper-details p {
+            font-size: 17.5px;
+            color: var(--text-main);
+            line-height: 1.85;
+            margin-bottom: 25px;
+        }
+
+        .zoom-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--navy-primary);
+            color: #ffffff;
+            padding: 12px 26px;
+            border-radius: 8px;
+            font-size: 15.5px;
+            font-weight: 700;
+            align-self: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .zoom-btn:hover {
+            background: var(--gold-accent);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* 2-कॉलम पोस्टर कार्ड */
+        .poster-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 40px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-card);
+        }
+
+        .poster-card-grid img {
+            width: 100%;
+            max-height: 480px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: #f8fafc;
+            padding: 10px;
+            border: 1px solid var(--border-light);
+        }
+
+        .poster-card-text h3 {
+            color: var(--navy-primary);
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .poster-card-text p {
+            font-size: 17.5px;
+            line-height: 1.85;
+            color: var(--text-main);
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 992px) {
+            .media-newspaper-card,
+            .poster-card-grid {
+                grid-template-columns: 1fr;
+            }
+            .newspaper-frame {
+                border-right: none;
+                border-bottom: 1px solid var(--border-light);
+            }
+            .newspaper-details {
+                padding: 30px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar">
+        <div class="top-container">
+            <span>📍 Ambala, Haryana, India</span>
+            <span>✉ info@globalfriendsvision.org</span>
+        </div>
+    </div>
+
+    <!-- ================= BRAND HEADER ================= -->
+    <header class="brand-header">
+        <div class="brand-container">
+            <div class="logo-box">
+                <img src="images/logo1.jpg" alt="Global Friends Vision Foundation Logo">
+            </div>
+            <div class="brand-content">
+                <p class="tagline">सेवा • मानवता • शिक्षा • स्वास्थ्य • संस्कृति</p>
+                <h1>Global Friends Vision Foundation</h1>
+                <p class="location">Ambala, Haryana, India</p>
+                <p class="brand-description">
+                    Working towards a sensitive, educated, healthy, self-reliant and cultured society.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="education.html">Education</a>
+            <a href="health.html">Health</a>
+            <a href="culture.html">Culture & Art</a>
+            <a href="media.html" class="active">Media</a>
+            <a href="team.html">Our Team</a>
+            <a href="contact.html">Contact</a>
+            <a href="join.html">Join Us</a>
+        </div>
+    </nav>
+
+    <!-- ================= HERO BANNER ================= -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <span class="hero-small">MEDIA & NEWS</span>
+            <h2>हमारी गतिविधियां, हमारी पहचान</h2>
+            <p>
+                संस्था से जुड़ी समाचार कवरेज, कार्यक्रमों और जागरूकता गतिविधियों की प्रामाणिक झलक।
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= 1. INTRO CARD ================= -->
+    <section class="edu-intro-section">
+        <div class="edu-container">
+            <div class="section-heading">
+                <span class="section-label">MEDIA</span>
+                <h2>मीडिया और जनसंपर्क</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="edu-intro-card">
+                <p>
+                    <strong>Global Friends Vision Foundation</strong> द्वारा किए जा रहे सामाजिक, शैक्षणिक, स्वास्थ्य और सांस्कृतिक प्रयासों को समाज तक पहुंचाना हमारे लिए अत्यंत महत्वपूर्ण है।
+                </p>
+                <p>
+                    मीडिया के माध्यम से संस्था की गतिविधियों, कार्यक्रमों और सामाजिक उद्देश्यों के बारे में लोगों को निष्पक्ष और सटीक जानकारी मिलती है। इससे समाज में जागरूकता बढ़ाने और अधिक लोगों को जनकल्याणकारी कार्यों से जोड़ने में सहायता मिलती है।
+                </p>
+                <p>
+                    इस Media Section में संस्था से संबंधित उपलब्ध समाचार कवरेज, पोस्टर और अन्य सार्वजनिक जानकारी को व्यवस्थित रूप से प्रस्तुत किया गया है।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 2. LARGE READABLE NEWSPAPERS ================= -->
+    <section class="why-edu-section">
+        <div class="edu-container">
+            <div class="section-heading">
+                <span class="section-label">NEWS COVERAGE</span>
+                <h2>समाचारों में हमारी झलक</h2>
+                <div class="heading-line"></div>
+                <p class="heading-description">
+                    स्पष्ट व बड़ा पढ़ने के लिए तस्वीर या नीचे दिए गए बटन पर क्लिक करें।
+                </p>
+            </div>
+
+            <div class="media-news-stack">
+                <!-- News 1: Guru Vashistha / Foundation Formation -->
+                <div class="media-newspaper-card">
+                    <a href="images/44.jpeg" target="_blank" class="newspaper-frame" title="अखबार पूरा बड़ा करके पढ़ें">
+                        <img src="images/44.jpeg" alt="Foundation Formation News">
+                    </a>
+                    <div class="newspaper-details">
+                        <span class="media-badge">NEWS COVERAGE</span>
+                        <h3>'ग्लोबल फ्रेंड्स विजन फाउंडेशन' का गठन</h3>
+                        <p>
+                            संस्था के उद्देश्य, सेवा संकल्प और कार्यकारिणी गठन से संबंधित प्रमुख समाचार पत्रों में प्रकाशित समाचार रिपोर्ट। इसमें शिक्षा, स्वास्थ्य, सेवा और संस्कृति को आगे बढ़ाने का संकल्प लिया गया है।
+                        </p>
+                        <a href="images/44.jpeg" target="_blank" class="zoom-btn">
+                            🔍 पूरा अख़बार बड़ा करके पढ़ें
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News 2: Delhi News / Public Awareness -->
+                <div class="media-newspaper-card">
+                    <a href="images/67.jpeg" target="_blank" class="newspaper-frame" title="अखबार पूरा बड़ा करके पढ़ें">
+                        <img src="images/67.jpeg" alt="Public Awareness News Coverage">
+                    </a>
+                    <div class="newspaper-details">
+                        <span class="media-badge">PUBLIC AWARENESS</span>
+                        <h3>सामाजिक संस्था की गतिविधियां एवं जनजागरूकता</h3>
+                        <p>
+                            संस्था द्वारा आयोजित सामाजिक जागरूकता अभियानों, जनकल्याणकारी कार्यों और आम जनमानस के सहयोग से जुड़ी गतिविधियों का समाचार पत्रों में कवरेज।
+                        </p>
+                        <a href="images/67.jpeg" target="_blank" class="zoom-btn">
+                            🔍 पूरा अख़बार बड़ा करके पढ़ें
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 3. AWARENESS POSTER ================= -->
+    <section class="edu-intro-section">
+        <div class="edu-container">
+            <div class="section-heading">
+                <span class="section-label">AWARENESS & INITIATIVES</span>
+                <h2>जागरूकता गतिविधियां एवं उद्देश्य</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="poster-card-grid">
+                <div>
+                    <img src="images/1.jpeg" alt="Global Friends Vision Foundation awareness poster">
+                </div>
+                <div class="poster-card-text">
+                    <span class="media-badge">AWARENESS POSTER</span>
+                    <h3>शिक्षा, सेवा एवं सामाजिक जागरूकता</h3>
+                    <p>
+                        यह संस्था द्वारा साझा किया गया विशेष जागरूकता पोस्टर है। संस्था इसे अपने सामाजिक उद्देश्यों को जन-जन तक पहुंचाने के एक मजबूत माध्यम के रूप में प्रस्तुत करती है।
+                    </p>
+                    <p>
+                        संस्था के कार्यक्रम और उद्देश्य समाज सेवा, मानवता, शिक्षा, स्वास्थ्य, महिला सम्मान, संस्कृति और कला जैसे महत्वपूर्ण क्षेत्रों से जुड़े हुए हैं, जिससे समाज में सकारात्मक बदलाव आ सके।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 4. OUR MESSAGE ================= -->
+    <section class="edu-vision-section">
+        <div class="edu-container edu-vision-container">
+            <div class="vision-text-col">
+                <span class="section-label">OUR MESSAGE</span>
+                <h2>सकारात्मक कार्यों को समाज तक पहुंचाना</h2>
+                <p>
+                    मीडिया और जनसंपर्क समाज में किसी भी सकारात्मक पहल की जानकारी लोगों तक पहुंचाने का सबसे सशक्त माध्यम है।
+                </p>
+                <p>
+                    संस्था का निरंतर प्रयास है कि सामाजिक सेवा, शिक्षा, स्वास्थ्य, संस्कृति और जनकल्याण से जुड़े सभी प्रयासों के बारे में अधिक से अधिक लोगों तक प्रामाणिक जानकारी पहुंचे।
+                </p>
+            </div>
+
+            <div class="vision-quote-col">
+                <span class="quote-mark">“</span>
+                <p>जागरूकता से जुड़ाव बढ़ता है और जुड़ाव से सकारात्मक बदलाव की शुरुआत होती है।</p>
+                <span class="quote-mark bottom">”</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Global Friends Vision Foundation</h3>
+                <p>
+                    सेवा, मानवता, शिक्षा, स्वास्थ्य, महिला सम्मान, संस्कृति और कला के माध्यम से समाज में सकारात्मक परिवर्तन के लिए समर्पित।
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="education.html">Education</a>
+                <a href="health.html">Health</a>
+                <a href="culture.html">Culture & Art</a>
+                <a href="media.html">Media</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>📍 Ambala, Haryana, India</p>
+                <p>✉ info@globalfriendsvision.org</p>
+                <p>🤝 Join us for social change</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Global Friends Vision Foundation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

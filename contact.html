@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Global Friends Vision Foundation</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================================
+           CONTACT PAGE - BALANCED 2-COLUMN & FORM STYLES
+           ========================================================= */
+
+        /* मुख्य 2-कॉलम संपर्क लेआउट */
+        .contact-main-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 40px;
+            align-items: flex-start;
+            margin-top: 45px;
+        }
+
+        /* बायां कॉलम: संपर्क विवरण कार्ड्स */
+        .contact-info-col {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-left: 5px solid var(--gold-accent);
+            border-radius: 14px;
+            padding: 26px 24px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .contact-icon-box {
+            width: 52px;
+            height: 52px;
+            background: #f1f5f9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            border: 1px solid var(--border-light);
+        }
+
+        .contact-details h3 {
+            color: var(--navy-primary);
+            font-size: 19px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .contact-details p {
+            color: var(--text-muted);
+            font-size: 15.5px;
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: var(--navy-primary);
+            font-weight: 700;
+        }
+
+        .contact-details a:hover {
+            color: var(--gold-accent);
+        }
+
+        /* दायां कॉलम: संपर्क फ़ॉर्म */
+        .contact-form-box {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-top: 5px solid var(--navy-primary);
+            border-radius: 16px;
+            padding: 40px 36px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .contact-form-box h3 {
+            color: var(--navy-primary);
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .form-subtext {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 26px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--navy-primary);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1.5px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 15px;
+            color: var(--text-main);
+            background: #fdfdfd;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--navy-primary);
+            box-shadow: 0 0 0 3px rgba(11, 31, 56, 0.1);
+            background: #ffffff;
+        }
+
+        textarea.form-control {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--navy-primary);
+            color: #ffffff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(11, 31, 56, 0.2);
+        }
+
+        .submit-btn:hover {
+            background: var(--gold-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(196, 139, 40, 0.35);
+        }
+
+        /* 4-कॉलम "How You Can Connect With Us" कार्ड्स */
+        .connect-ways-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 45px;
+        }
+
+        .connect-way-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-top: 4px solid var(--gold-accent);
+            border-radius: 14px;
+            padding: 30px 22px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .connect-way-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .way-num {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--gold-accent);
+            margin-bottom: 8px;
+        }
+
+        .connect-way-card h3 {
+            color: var(--navy-primary);
+            font-size: 19px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .connect-way-card p {
+            font-size: 14.5px;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 992px) {
+            .contact-main-grid {
+                grid-template-columns: 1fr;
+            }
+            .connect-ways-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .connect-ways-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-form-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar">
+        <div class="top-container">
+            <span>📍 Ambala, Haryana, India</span>
+            <span>✉ info@globalfriendsvision.org</span>
+        </div>
+    </div>
+
+    <!-- ================= BRAND HEADER ================= -->
+    <header class="brand-header">
+        <div class="brand-container">
+            <div class="logo-box">
+                <img src="images/logo1.jpg" alt="Global Friends Vision Foundation Logo">
+            </div>
+            <div class="brand-content">
+                <p class="tagline">सेवा • मानवता • शिक्षा • स्वास्थ्य • संस्कृति</p>
+                <h1>Global Friends Vision Foundation</h1>
+                <p class="location">Ambala, Haryana, India</p>
+                <p class="brand-description">
+                    Working towards a sensitive, educated, healthy, self-reliant and cultured society.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="education.html">Education</a>
+            <a href="health.html">Health</a>
+            <a href="culture.html">Culture & Art</a>
+            <a href="media.html">Media</a>
+            <a href="team.html">Our Team</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="join.html">Join Us</a>
+        </div>
+    </nav>
+
+    <!-- ================= HERO BANNER ================= -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <span class="hero-small">GLOBAL FRIENDS VISION FOUNDATION</span>
+            <h2>Contact Us</h2>
+            <p>
+                We welcome your questions, suggestions, support and interest in working together for a better society.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= 1. INTRO CARD ================= -->
+    <section class="edu-intro-section">
+        <div class="edu-container">
+            <div class="section-heading">
+                <span class="section-label">GET IN TOUCH</span>
+                <h2>We Would Love to Hear From You</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="edu-intro-card">
+                <p>
+                    Whether you want to know more about our foundation, support our initiatives, collaborate with us, or simply share an idea for social welfare, you are welcome to connect with <strong>Global Friends Vision Foundation</strong>.
+                </p>
+                <p>
+                    Your suggestions, participation and support can help strengthen our efforts in the areas of education, health, women empowerment, social awareness, culture and community development.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 2. CONTACT DETAILS & FORM (2-COLUMN) ================= -->
+    <section class="why-edu-section">
+        <div class="edu-container">
+            <div class="contact-main-grid">
+                <!-- बायां कॉलम: संपर्क विवरण -->
+                <div class="contact-info-col">
+                    <div class="section-heading" style="text-align: left; margin-bottom: 10px;">
+                        <span class="section-label">REACH OUT</span>
+                        <h2 style="font-size: 28px;">Let's Connect</h2>
+                        <div class="heading-line" style="margin: 10px 0 0 0;"></div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 10px;">
+                        For general enquiries, collaboration, social initiatives or information about the foundation, you can reach out to us through the details below.
+                    </p>
+
+                    <div class="contact-card">
+                        <div class="contact-icon-box">📍</div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Ambala, Haryana, India</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon-box">🌐</div>
+                        <div class="contact-details">
+                            <h3>Organisation</h3>
+                            <p>Global Friends Vision Foundation</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon-box">✉</div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>info@globalfriendsvision.org</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon-box">📱</div>
+                        <div class="contact-details">
+                            <h3>Social Media</h3>
+                            <p><a href="#" target="_blank">Visit our Facebook Page ↗</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- दायां कॉलम: संपर्क फ़ॉर्म -->
+                <div class="contact-form-box">
+                    <span class="section-label">WRITE TO US</span>
+                    <h3>Send a Message</h3>
+                    <p class="form-subtext">Have a question or suggestion? Fill in the form below.</p>
+
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Enter subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Write your message here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 3. HOW YOU CAN CONNECT (4 CARDS) ================= -->
+    <section class="edu-intro-section">
+        <div class="edu-container">
+            <div class="section-heading">
+                <span class="section-label">CONNECT • PARTICIPATE • CONTRIBUTE</span>
+                <h2>How You Can Connect With Us</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="connect-ways-grid">
+                <div class="connect-way-card">
+                    <span class="way-num">01</span>
+                    <h3>Ask Questions</h3>
+                    <p>Get information about the foundation, its vision and its social welfare initiatives.</p>
+                </div>
+
+                <div class="connect-way-card">
+                    <span class="way-num">02</span>
+                    <h3>Collaborate</h3>
+                    <p>Connect with us for meaningful collaborations and community-oriented initiatives.</p>
+                </div>
+
+                <div class="connect-way-card">
+                    <span class="way-num">03</span>
+                    <h3>Share Ideas</h3>
+                    <p>Share your suggestions and ideas that can contribute towards positive social change.</p>
+                </div>
+
+                <div class="connect-way-card">
+                    <span class="way-num">04</span>
+                    <h3>Support Our Vision</h3>
+                    <p>Become a part of our efforts towards education, health, empowerment and social development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 4. CLOSING STATEMENT ================= -->
+    <section class="social-change-section">
+        <div class="edu-container">
+            <div class="social-change-card">
+                <span class="section-label">UNITED FOR CHANGE</span>
+                <h2>Every Connection Can Create a Difference</h2>
+                <div class="heading-line"></div>
+                <p>
+                    Global Friends Vision Foundation believes that meaningful change begins when people connect, communicate and work together with a shared sense of responsibility towards society.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Global Friends Vision Foundation</h3>
+                <p>
+                    सेवा, मानवता, शिक्षा, स्वास्थ्य, महिला सम्मान, संस्कृति और कला के माध्यम से समाज में सकारात्मक परिवर्तन के लिए समर्पित।
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="education.html">Education</a>
+                <a href="health.html">Health</a>
+                <a href="culture.html">Culture & Art</a>
+                <a href="media.html">Media</a>
+                <a href="team.html">Our Team</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>📍 Ambala, Haryana, India</p>
+                <p>✉ info@globalfriendsvision.org</p>
+                <p>🤝 Join us for social change</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Global Friends Vision Foundation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

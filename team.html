@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Global Friends Vision Foundation</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================================
+           TEAM PAGE - 7 MEMBERS BALANCED GRID & STYLING
+           ========================================================= */
+
+        /* 3-कॉलम ग्रिड */
+        .team-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 45px;
+        }
+
+        .member-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-top: 4px solid var(--gold-accent);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(11, 31, 56, 0.08);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(11, 31, 56, 0.14);
+        }
+
+        /* 7वां सदस्य बिल्कुल सेंटर में सेट होगा */
+        .member-card:nth-child(7) {
+            grid-column: 2;
+        }
+
+        /* फोटो फ्रेम - चेहरा और सिर कभी नहीं कटेगा */
+        .member-img-frame {
+            width: 100%;
+            height: 340px;
+            background: #f8fafc;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+        }
+
+        .member-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;    /* सिर हमेशा पूरा दिखेगा */
+            display: block;
+            transition: transform 0.35s ease;
+        }
+
+        .member-card:hover .member-img-frame img {
+            transform: scale(1.03);
+        }
+
+        /* सदस्य की जानकारी */
+        .member-info {
+            padding: 24px 22px 28px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .member-info h3 {
+            color: var(--navy-primary);
+            font-size: 21px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .member-role {
+            display: inline-block;
+            color: var(--gold-accent);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .member-desc {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* टैबलेट और मोबाइल रेस्पॉन्सिव */
+        @media (max-width: 992px) {
+            .team-grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .member-card:nth-child(7) {
+                grid-column: span 2;
+                max-width: 420px;
+                margin: 0 auto;
+                width: 100%;
+            }
+            .member-img-frame {
+                height: 310px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .team-grid-container {
+                grid-template-columns: 1fr;
+            }
+            .member-card:nth-child(7) {
+                grid-column: auto;
+                max-width: 100%;
+            }
+            .member-img-frame {
+                height: 330px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar">
+        <div class="top-container">
+            <span>📍 Ambala, Haryana, India</span>
+            <span>✉ info@globalfriendsvision.org</span>
+        </div>
+    </div>
+
+    <!-- ================= BRAND HEADER ================= -->
+    <header class="brand-header">
+        <div class="brand-container">
+            <div class="logo-box">
+                <img src="images/logo1.jpg" alt="Global Friends Vision Foundation Logo">
+            </div>
+            <div class="brand-content">
+                <p class="tagline">सेवा • मानवता • शिक्षा • स्वास्थ्य • संस्कृति</p>
+                <h1>Global Friends Vision Foundation</h1>
+                <p class="location">Ambala, Haryana, India</p>
+                <p class="brand-description">
+                    Working towards a sensitive, educated, healthy, self-reliant and cultured society.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="education.html">Education</a>
+            <a href="health.html">Health</a>
+            <a href="culture.html">Culture & Art</a>
+            <a href="media.html">Media</a>
+            <a href="team.html" class="active">Our Team</a>
+            <a href="contact.html">Contact</a>
+            <a href="join.html">Join Us</a>
+        </div>
+    </nav>
+
+    <!-- ================= HERO BANNER ================= -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <span class="hero-small">GLOBAL FRIENDS VISION FOUNDATION</span>
+            <h2>Our Dedicated Team</h2>
+            <p>
+                Meet the people working together with dedication, compassion and commitment towards social welfare and positive change.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= 1. TEAM INTRO CARD ================= -->
+    <section class="edu-intro-section">
+        <div class="edu-container">
+            <div class="section-heading">
+                <span class="section-label">LEADERSHIP & SERVICE</span>
+                <h2>समाज निर्माण में समर्पित टीम</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="edu-intro-card">
+                <p>
+                    <strong>Global Friends Vision Foundation</strong> का मानना है कि वास्तविक और सार्थक सामाजिक बदलाव तभी संभव होता है जब लोग सेवा भाव और एक साझा विजन के साथ मिलकर कार्य करते हैं।
+                </p>
+                <p>
+                    हमारी टीम शिक्षा, स्वास्थ्य जागरूकता, सामाजिक सेवा, महिला सम्मान, संस्कृति, कला और सामुदायिक विकास के विभिन्न क्षेत्रों में निरंतर सक्रिय है। प्रत्येक सदस्य अपना समय, कौशल और प्रयास समाज के कल्याण में समर्पित करता है।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 2. 7 MEMBERS GRID ================= -->
+    <section class="why-edu-section">
+        <div class="edu-container">
+            <div class="section-heading">
+                <span class="section-label">OUR TEAM MEMBERS</span>
+                <h2>हमारे सम्मानित सदस्य</h2>
+                <div class="heading-line"></div>
+                <p class="heading-description">
+                    Together we work with dedication for the welfare of society and the development of our community.
+                </p>
+            </div>
+
+            <div class="team-grid-container">
+                <!-- Member 1 -->
+                <div class="member-card">
+                    <div class="member-img-frame">
+                        <img src="images/member2.jpeg" alt="Team Member 1">
+                    </div>
+                    <div class="member-info">
+                        <h3>Team Member</h3>
+                        <span class="member-role">Core Committee Member</span>
+                        <p class="member-desc">Dedicated member contributing towards the foundation's social service and community development initiatives.</p>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="member-card">
+                    <div class="member-img-frame">
+                        <img src="images/member1.jpeg" alt="Team Member 2">
+                    </div>
+                    <div class="member-info">
+                        <h3>Team Member</h3>
+                        <span class="member-role">Executive Member</span>
+                        <p class="member-desc">Contributing with commitment and dedication towards the foundation's vision and social welfare activities.</p>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="member-card">
+                    <div class="member-img-frame">
+                        <img src="images/member5.jpeg" alt="Team Member 3">
+                    </div>
+                    <div class="member-info">
+                        <h3>Team Member</h3>
+                        <span class="member-role">Social Work Lead</span>
+                        <p class="member-desc">Supporting initiatives focused on awareness, education, health and positive social change.</p>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="member-card">
+                    <div class="member-img-frame">
+                        <img src="images/member4.jpeg" alt="Team Member 4">
+                    </div>
+                    <div class="member-info">
+                        <h3>Team Member</h3>
+                        <span class="member-role">Advisory Member</span>
+                        <p class="member-desc">Working together with the team to support community welfare and meaningful social initiatives.</p>
+                    </div>
+                </div>
+
+                <!-- Member 5 -->
+                <div class="member-card">
+                    <div class="member-img-frame">
+                        <img src="images/member3.jpeg" alt="Team Member 5">
+                    </div>
+                    <div class="member-info">
+                        <h3>Team Member</h3>
+                        <span class="member-role">Community Coordinator</span>
+                        <p class="member-desc">Contributing towards building an inclusive, educated and self-reliant society.</p>
+                    </div>
+                </div>
+
+                <!-- Member 6 -->
+                <div class="member-card">
+                    <div class="member-img-frame">
+                        <img src="images/member6.jpeg" alt="Team Member 6">
+                    </div>
+                    <div class="member-info">
+                        <h3>Team Member</h3>
+                        <span class="member-role">Programme Coordinator</span>
+                        <p class="member-desc">Supporting the foundation's mission through teamwork, awareness and community participation.</p>
+                    </div>
+                </div>
+
+                <!-- Member 7 (Centered in row 3) -->
+                <div class="member-card">
+                    <div class="member-img-frame">
+                        <img src="images/member7.jpeg" alt="Team Member 7">
+                    </div>
+                    <div class="member-info">
+                        <h3>Team Member</h3>
+                        <span class="member-role">Executive Member</span>
+                        <p class="member-desc">Working with dedication to promote humanity, social responsibility and positive change.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 3. WORKING TOGETHER STATEMENT ================= -->
+    <section class="social-change-section">
+        <div class="edu-container">
+            <div class="social-change-card">
+                <span class="section-label">COLLECTIVE EFFORT</span>
+                <h2>Working Together for a Better Society</h2>
+                <div class="heading-line"></div>
+                <p>
+                    Our team believes that every individual has the ability to contribute towards society. Through collective effort, responsible action and community participation, we aim to support initiatives that create meaningful and positive change.
+                </p>
+                <p>
+                    The foundation continues to bring together people who believe in service, humanity, education, health, empowerment and the preservation of India's rich cultural heritage.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Global Friends Vision Foundation</h3>
+                <p>
+                    सेवा, मानवता, शिक्षा, स्वास्थ्य, महिला सम्मान, संस्कृति और कला के माध्यम से समाज में सकारात्मक परिवर्तन के लिए समर्पित।
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="education.html">Education</a>
+                <a href="health.html">Health</a>
+                <a href="culture.html">Culture & Art</a>
+                <a href="media.html">Media</a>
+                <a href="team.html">Our Team</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>📍 Ambala, Haryana, India</p>
+                <p>✉ info@globalfriendsvision.org</p>
+                <p>🤝 Join us for social change</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Global Friends Vision Foundation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
