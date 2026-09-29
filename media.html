@@ -97,28 +97,7 @@
             font-size: 17.5px;
             color: var(--text-main);
             line-height: 1.85;
-            margin-bottom: 25px;
-        }
-
-        .zoom-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--navy-primary);
-            color: #ffffff;
-            padding: 12px 26px;
-            border-radius: 8px;
-            font-size: 15.5px;
-            font-weight: 700;
-            align-self: flex-start;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .zoom-btn:hover {
-            background: var(--gold-accent);
-            color: #ffffff;
-            transform: translateY(-2px);
+            margin-bottom: 0;
         }
 
         /* 2-कॉलम पोस्टर कार्ड */
@@ -214,7 +193,6 @@
             <a href="team.html">Our Team</a>
             <a href="contact.html">Contact</a>
             <a href="join.html">Join Us</a>
-            
         </div>
     </nav>
 
@@ -260,7 +238,7 @@
                 <h2>समाचारों में हमारी झलक</h2>
                 <div class="heading-line"></div>
                 <p class="heading-description">
-                    स्पष्ट व बड़ा पढ़ने के लिए तस्वीर या नीचे दिए गए बटन पर क्लिक करें।
+                    स्पष्ट व बड़ा पढ़ने के लिए तस्वीर पर क्लिक करें।
                 </p>
             </div>
 
@@ -277,9 +255,6 @@
                         <p>
                             संस्था के उद्देश्य, सेवा संकल्प और कार्यकारिणी गठन से संबंधित प्रमुख समाचार पत्रों में प्रकाशित समाचार रिपोर्ट। इसमें शिक्षा, स्वास्थ्य, सेवा और संस्कृति को आगे बढ़ाने का संकल्प लिया गया है।
                         </p>
-                        <a href="44.jpeg" target="_blank" class="zoom-btn">
-                            🔍 पूरा अख़बार बड़ा करके पढ़ें
-                        </a>
                     </div>
                 </div>
 
@@ -294,9 +269,6 @@
                         <p>
                             संस्था द्वारा आयोजित सामाजिक जागरूकता अभियानों, जनकल्याणकारी कार्यों और आम जनमानस के सहयोग से जुड़ी गतिविधियों का समाचार पत्रों में कवरेज।
                         </p>
-                        <a href="67.jpeg" target="_blank" class="zoom-btn">
-                            🔍 पूरा अख़बार बड़ा करके पढ़ें
-                        </a>
                     </div>
                 </div>
             </div>
@@ -394,7 +366,7 @@
             // Admin panel dwara save kiye gaye posts fetch karna
             const adminPosts = JSON.parse(localStorage.getItem('gfvf_media_posts') || '[]');
 
-            // Naye posts ko stack me sabse upar lagana
+            // Naye posts ko stack me sabse upar lagana (Button hataya gaya)
             adminPosts.forEach(post => {
                 const card = document.createElement('div');
                 card.className = 'media-newspaper-card';
@@ -406,9 +378,6 @@
                         <span class="media-badge">${post.badge || 'NEWS COVERAGE'}</span>
                         <h3>${post.title}</h3>
                         <p>${post.desc}</p>
-                        <a href="${post.image}" target="_blank" class="zoom-btn">
-                            🔍 पूरा अख़बार बड़ा करके पढ़ें
-                        </a>
                     </div>
                 `;
                 // Nayi post ko sabse upar show karega
